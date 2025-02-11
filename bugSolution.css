@@ -1,0 +1,13 @@
+The issue arises because `calc()` within a `@media` query might not always correctly interpret percentage values relative to the parent element's dimensions. Using the `vw` (viewport width) unit explicitly solves this problem. The viewport width is always consistent, regardless of the media query.
+
+Here's the corrected CSS:
+
+```css
+@media (max-width: 768px) {
+  #myDiv {
+    width: calc(50vw - 20px);
+  }
+}
+```
+
+By replacing `50%` with `50vw`, we explicitly tell `calc()` to use the viewport width as the base for the percentage calculation, ensuring the subtraction of 20px works correctly.
