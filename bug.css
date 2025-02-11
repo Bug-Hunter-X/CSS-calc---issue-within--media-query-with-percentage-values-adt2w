@@ -1,0 +1,11 @@
+The CSS property `calc()` is not working as expected when used with percentage values inside a `@media` query.  For example, the following code attempts to set the width of a div to 50% of the viewport width, but it doesn't work as expected within a media query:
+
+```css
+@media (max-width: 768px) {
+  #myDiv {
+    width: calc(50% - 20px);
+  }
+}
+```
+
+The expected behavior is that the div should be 50% of the viewport width minus 20 pixels. However, the actual behavior is that the calculation is incorrect, resulting in an unexpected width. 
